@@ -1,0 +1,74 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <h1>Secure Password Generator</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="form-check form-switch">
+        <div class="col-12 m-4">
+          <label>
+            Longueur du mot de passe:
+            <input
+              type="number"
+              [(ngModel)]="passwordLength"
+              min="1"
+              max="100"
+              class="form-control"
+            />
+          </label>
+        </div>
+        <div class="col-12 m-4">
+          <label class="form-check-label" for="flexSwitchCheckChecked1">
+            Inclure des symboles
+          </label>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked1"
+            [(ngModel)]="includeSymbols"
+          />
+        </div>
+        <div class="col-12 m-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked2"
+            [(ngModel)]="includeNumber"
+          />
+          <label class="form-check-label" for="flexSwitchCheckChecked2">
+            Inclure des nombres
+          </label>
+        </div>
+        <div class="col-12 m-4">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="flexSwitchCheckChecked3"
+            [(ngModel)]="includeUppercase"
+          />
+          <label class="form-check-label" for="flexSwitchCheckChecked3">
+            Inclure des majuscule
+          </label>
+        </div>
+        <button
+          (click)="generate()"
+          type="button"
+          class="btn btn-outline-primary float-end"
+        >
+          Générer
+        </button>
+        <div class="col-12">
+          <div *ngIf="generatedPassword">
+            Mot de passe généré: <strong>{{ generatedPassword }}</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
