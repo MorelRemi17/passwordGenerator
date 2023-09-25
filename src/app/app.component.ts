@@ -22,4 +22,12 @@ export class AppComponent {
       this.includeUppercase
     );
   }
+  copyPassword(): void {
+    const textArea = document.createElement('textarea');
+    textArea.value = this.generatedPassword ? this.generatedPassword : '';
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+  }
 }

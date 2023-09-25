@@ -66,8 +66,10 @@
         <div class="col-12">
           <div *ngIf="generatedPassword">
             Mot de passe généré: <strong>{{ generatedPassword }}</strong>
+            <button (click)="copyPassword()">Copier</button>
           </div>
         </div>
+        
       </div>
     </div>
   </div>
